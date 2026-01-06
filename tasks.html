@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Done</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadXML('./xml/hw.xml', 'xmlContent')">
+    <div class="container">
+        <header>
+            <a href="https://www.gndec.ac.in/"><img src="./images/new_gndeclogo.png" alt="GNDEC Logo"></a>
+            <a href="index.html" class="home-button" onclick="showSection('home')">Home</a>
+        </header>
+        <div class="report-header">
+            <h1>Training TR-103 Daily Report</h1>
+            <h2>Tasks Done</h2>
+            <p>Submitted by:<br>Shafneet Kaur<br>URN 2203560 D3 CSE C1<br>Guru Nanak Dev Engineering College, Gill Park, Ludhiana</p>
+            <h2>4 Weeks Summer Training<br>on<br>Prompt Engineering</h2>
+        </div>
+        <nav>
+            <a href="#" onclick="showSection('Task1')">Task Day1</a>
+            <a href="#" onclick="showSection('Task2')">Web Summarizer</a>
+            <a href="#" onclick="showSection('Task3')">Image Generator</a>
+            <a href="#" onclick="showSection('Task4')">Typewriter Summarizer</a>
+            <a href="#" onclick="showSection('Task5')">Speech-to-Text</a>
+            <a href="#" onclick="showSection('Task6')">Task Day6</a>
+            <a href="#" onclick="showSection('Task7')">Task Day7</a>
+        </nav>
+        <section id="Task1" class="section">
+            <h1>Training Task Day1</h1>
+            <div class="pdf-container">
+                <iframe src="./tasks/Task1/Task1.pdf"></iframe>
+            </div>
+        </section>
+        <section id="Task2" class="section">
+            <h1>Web Summarizer</h1>
+            <div class="pdf-container">
+                <iframe src="./tasks/Task2/web summarizer/summary.html"></iframe>
+            </div>
+        </section>
+        <section id="Task3" class="section">
+            <h1>Image Generator</h1>
+            <div class="pdf-container">
+                <iframe src="./tasks/Task2/image generator/output.png"></iframe>
+            </div>
+        </section>
+        <section id="Task4" class="section">
+            <h1>Typewriter Summarizer</h1>
+            <div class="pdf-container">
+                <iframe src="./tasks/Task2/typewriter web summarizer/typewriter_summarizer.ipynb"></iframe>
+            </div>
+        </section>
+        <section id="Task5" class="section">
+            <h1>Speech-to-Text</h1>
+            <div class="pdf-container">
+                <iframe src="./tasks/Task3/Speech-to-Text/Screenshot 2025-07-09 003946.png"></iframe>
+            </div>
+        </section>
+        <section id="Task7" class="section">
+            <h1>Friends List XML</h1>
+            <div class="xml-container" id="xmlContent"></div>
+        </section>
+        <footer>
+            <a href="https://www.linkedin.com/in/shafneet-kaur-90434125b/"> <img src="./images/linkedin-logo.avif" alt="Unable to load" height="30px"></a>
+        </footer>
+    </div>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        } 
+        function loadXML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).textContent = data;
+                })
+                .catch(error => console.error('Error loading XML:', error));
+        }
+    </script>
+</body>
+
+</html>

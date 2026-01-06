@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training TR-103 Daily Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="https://www.gndec.ac.in/"><img src="./images/new_gndeclogo.png" alt="GNDEC Logo"></a>
+            <a href="#" class="home-button" onclick="showSection('home')">Home</a>
+        </header>
+        <div class="report-header">
+            <h1>Training TR-104 Daily Report</h1>
+            <p>Submitted by:<br>Shafneet Kaur<br>URN 2203560 D4 CSE C1<br>Guru Nanak Dev Engineering College, Gill Park,Ludhiana</p>
+            <h2>6 Months Training<br>in<br>Full Stack Development</h2>
+        </div>
+        <nav>
+            <a href="diary.html" onclick="showSection('diary')">Daily Diary</a>
+            <a href="tasks.html" onclick="showSection('task')">Tasks Done</a>
+            <br>
+        </nav>
+        <footer>
+            <a href="https://www.linkedin.com/in/shafneet-kaur-90434125b/"> <img src="./images/linkedin-logo.avif" alt="Unable to load" height="30px"></a>
+        </footer>
+    </div>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        } 
+    </script>
+</body>
+
+</html>
